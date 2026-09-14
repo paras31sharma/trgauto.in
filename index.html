@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TRG Auto — Cars, Explained.</title>
+  <meta name="description" content="TRG Auto — cars, explained simply. Discover cars, compare models, read reviews and make smarter car-buying decisions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #0b63ce;
+      --dark: #07111f;
+      --text: #172033;
+      --muted: #687386;
+      --light: #f5f7fa;
+      --border: #e4e8ee;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      height: 72px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(255,255,255,0.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #4d5768;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 75% 25%, rgba(11,99,206,0.25), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0a1728 55%, #102c4b 100%);
+      color: white;
+      padding: 90px 6% 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -180px;
+      bottom: -280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #75b5ff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #62aaff;
+    }
+
+    .hero-text {
+      color: #c8d3e1;
+      font-size: 18px;
+      max-width: 580px;
+      margin-bottom: 35px;
+    }
+
+    .search-box {
+      max-width: 650px;
+      background: white;
+      padding: 7px;
+      border-radius: 12px;
+      display: flex;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px 17px;
+      color: var(--text);
+      min-width: 0;
+    }
+
+    .search-box button {
+      border: none;
+      background: var(--blue);
+      color: white;
+      padding: 0 25px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .search-box button:hover {
+      background: #0955b0;
+    }
+
+    /* GENERAL */
+
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 28px;
+      gap: 20px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      letter-spacing: -1.5px;
+    }
+
+    .section-link {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* CAR CARDS */
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .car-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(10,25,45,0.10);
+    }
+
+    .car-image {
+      height: 190px;
+      background: linear-gradient(135deg, #dfe7ef, #f7f9fb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #788597;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .car-details {
+      padding: 20px;
+    }
+
+    .car-brand {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .car-name {
+      font-size: 23px;
+      font-weight: 800;
+      margin: 4px 0 9px;
+      letter-spacing: -0.7px;
+    }
+
+    .car-price {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .car-price strong {
+      color: var(--text);
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      background: var(--light);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px 20px;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+    }
+
+    .category-icon {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .category h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .category p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* COMPARE */
+
+    .compare-box {
+      background: #07111f;
+      color: white;
+      border-radius: 20px;
+      padding: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .compare-content {
+      max-width: 520px;
+    }
+
+    .compare-content .section-label {
+      color: #75b5ff;
+    }
+
+    .compare-content h2 {
+      font-size: 38px;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
+    }
+
+    .compare-content p {
+      color: #aebdce;
+      font-size: 15px;
+    }
+
+    .compare-button {
+      background: white;
+      color: var(--dark);
+      padding: 15px 24px;
+      border-radius: 9px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .compare-button:hover {
+      background: #edf4fc;
+    }
+
+    /* CONTENT */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .content-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .content-image {
+      height: 180px;
+      background: linear-gradient(135deg, #d8e2ed, #f2f5f8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #728093;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .content-body {
+      padding: 20px;
+    }
+
+    .content-tag {
+      color: var(--blue);
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+    }
+
+    .content-body h3 {
+      margin-top: 7px;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .content-body p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #050c15;
+      color: white;
+      padding: 50px 6% 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #1d2936;
+    }
+
+    .footer-brand {
+      max-width: 330px;
+    }
+
+    .footer-brand h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand h2 span {
+      color: #62aaff;
+    }
+
+    .footer-brand p {
+      color: #8998aa;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 70px;
+    }
+
+    .footer-links h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: #b9c5d2;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #8998aa;
+      font-size: 13px;
+      margin-bottom: 9px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      padding-top: 25px;
+      color: #657384;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        padding: 70px 6% 80px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .car-grid,
+      .content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .compare-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .navbar {
+        height: 62px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .hero {
+        padding: 60px 6% 70px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .search-box {
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        gap: 8px;
+      }
+
+      .search-box input {
+        border-radius: 8px;
+        padding: 16px;
+      }
+
+      .search-box button {
+        padding: 14px;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .section-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .car-grid,
+      .content-grid,
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-box {
+        padding: 30px;
+      }
+
+      .compare-content h2 {
+        font-size: 31px;
+      }
+
+      .footer-links {
+        gap: 35px;
+      }
+
+      .copyright {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+    <a href="#" class="logo">TRG <span>AUTO</span></a>
+
+    <nav class="nav-links">
+      <a href="#cars">Cars</a>
+      <a href="#compare">Compare</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#news">News</a>
+      <a href="#guides">Guides</a>
+    </nav>
+
+    <button class="menu-button">☰</button>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">The Regular Guy presents</div>
+
+      <h1>
+        Cars.<br>
+        <span>Explained.</span>
+      </h1>
+
+      <p class="hero-text">
+        Discover cars, compare what actually matters and make smarter
+        buying decisions — without the usual automotive jargon.
+      </p>
+
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Search for a car, brand or model..."
+          id="carSearch"
+        >
+        <button onclick="searchCar()">Search</button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- POPULAR CARS -->
+
+  <section class="section" id="cars">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-label">Explore</div>
+          <h2 class="section-title">Popular Cars</h2>
+        </div>
+
+        <a href="#" class="section-link">View all cars →</a>
+      </div>
+
+
+      <div class="car-grid">
+
+        <a href="#" class="car-card">
+          <div class="car-image">CAR IMAGE</div>
+          <div class="car-details">
+            <div class="car-brand">Volkswagen</div>
+            <div class="car-name">Virtus</div>
+            <div class="car-price">
+              Starts at <strong>₹11.56 Lakh</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="car-card">
+          <div class="car-image">CAR IMAGE</div>
+          <div class="car-details">
+            <div class="car-brand">Skoda</div>
+            <div class="car-name">Slavia</div>
+            <div class="car-price">
+              Starts at <strong>₹10.99 Lakh</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="car-card">
+          <div class="car-image">CAR IMAGE</div>
+          <div class="car-details">
+            <div class="car-brand">Hyundai</div>
+            <div class="car-name">Creta</div>
+            <div class="car-price">
+              Starts at <strong>₹11.11 Lakh</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="car-card">
+          <div class="car-image">CAR IMAGE</div>
+          <div class="car-details">
+            <div class="car-brand">Mahindra</div>
+            <div class="car-name">XUV700</div>
+            <div class="car-price">
+              Starts at <strong>₹13.66 Lakh</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="car-card">
+          <div class="car-image">CAR IMAGE</div>
+          <div class="car-details">
+            <div class="car-brand">Toyota</div>
+            <div class="car-name">Fortuner</div>
+            <div class="car-price">
+              Starts at <strong>₹34.16 Lakh</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="car-card">
+          <div class="car-image">CAR IMAGE</div>
+          <div class="car-details">
+            <div class="car-brand">Mahindra</div>
+            <div class="car-name">Thar</div>
+            <div class="car-price">
+              Starts at <strong>₹9.99 Lakh</strong>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CATEGORIES -->
+
+  <section class="section categories" id="guides">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-label">Find your car</div>
+          <h2 class="section-title">What are you looking for?</h2>
+        </div>
+      </div>
+
+      <div class="category-grid">
+
+        <a href="#" class="category">
+          <div class="category-icon">🚗</div>
+          <h3>New Cars</h3>
+          <p>Prices, specs, variants and features.</p>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">⚖️</div>
+          <h3>Compare Cars</h3>
+          <p>Put two cars head-to-head.</p>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">⭐</div>
+          <h3>Reviews</h3>
+          <p>Real-world opinions that matter.</p>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">💡</div>
+          <h3>Buying Guides</h3>
+          <p>Find the right car for your needs.</p>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- COMPARE -->
+
+  <section class="section" id="compare">
+    <div class="container">
+
+      <div class="compare-box">
+
+        <div class="compare-content">
+          <div class="section-label">TRG Comparison</div>
+
+          <h2>
+            Don't just compare numbers.
+            Compare what matters.
+          </h2>
+
+          <p>
+            Compare price, performance, practicality, features and
+            real-world usability — all in one place.
+          </p>
+        </div>
+
+        <a href="#" class="compare-button">
+          Compare Cars →
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- LATEST CONTENT -->
+
+  <section class="section" id="news">
+    <div class="container">
+
+      <div class="section-header">
+        <div>
+          <div class="section-label">From TRG Auto</div>
+          <h2 class="section-title">Latest Stories</h2>
+        </div>
+
+        <a href="#" class="section-link">View all →</a>
+      </div>
+
+
+      <div class="content-grid">
+
+        <article class="content-card">
+          <div class="content-image">ARTICLE IMAGE</div>
+
+          <div class="content-body">
+            <div class="content-tag">Buying Guide</div>
+
+            <h3>
+              The best automatic cars you can buy right now
+            </h3>
+
+            <p>
+              From affordable hatchbacks to premium SUVs — here's
+              what we'd actually recommend.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="content-card" id="reviews">
+          <div class="content-image">ARTICLE IMAGE</div>
+
+          <div class="content-body">
+            <div class="content-tag">Ownership</div>
+
+            <h3>
+              Living with a Volkswagen Virtus GT
+            </h3>
+
+            <p>
+              The good, the bad and everything we've learned from
+              living with a performance sedan.
+            </p>
+          </div>
+        </article>
+
+
+        <article class="content-card">
+          <div class="content-image">ARTICLE IMAGE</div>
+
+          <div class="content-body">
+            <div class="content-tag">Explained</div>
+
+            <h3>
+              DCT vs Torque Converter: What's actually better?
+            </h3>
+
+            <p>
+              We break down the technology without making it
+              unnecessarily complicated.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <h2>TRG <span>AUTO</span></h2>
+
+          <p>
+            Cars, explained. Built by The Regular Guy to help
+            everyday people make better automotive decisions.
+          </p>
+        </div>
+
+
+        <div class="footer-links">
+
+          <div>
+            <h4>Explore</h4>
+            <a href="#cars">Cars</a>
+            <a href="#compare">Compare</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#news">News</a>
+          </div>
+
+          <div>
+            <h4>TRG Auto</h4>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        <span>© 2026 TRG Auto. All rights reserved.</span>
+        <span>trgauto.in</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function searchCar() {
+
+      const input = document
+        .getElementById("carSearch")
+        .value
+        .trim();
+
+      if (!input) {
+        alert("Enter a car or brand to search.");
+        return;
+      }
+
+      alert(
+        "TRG Auto search is coming soon.\n\nYou searched for: " + input
+      );
+    }
+
+  </script>
+
+</body>
+</html>
