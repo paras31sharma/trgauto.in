@@ -10,7 +10,7 @@ const menu=document.querySelector(".menu-toggle"),nav=document.querySelector("#s
 menu?.addEventListener("click",()=>nav.classList.toggle("open"));
 
 const pop=document.querySelector("#popularCars");
-if(pop)pop.innerHTML=D.popular.map(c=>`<a class="popular-card" href="cars.html"><div class="popular-art"><img loading="lazy" src="${c.image}" alt="${esc(c.name)}" onerror="this.onerror=null;this.src='assets/car-fallback.svg';"></div><b>${esc(c.name)}</b><span>${esc(c.price)}</span></a>`).join("");
+if(pop)pop.innerHTML=D.popular.map(c=>`<a class="popular-card" href="cars.html"><div class="popular-art"><img loading="lazy" src="${c.image}" alt="${esc(c.name)}" onerror="this.onerror=null;this.src='assets/car-fallback.jpg';"></div><b>${esc(c.name)}</b><span>${esc(c.price)}</span></a>`).join("");
 
 function carCard(c){return `<article class="car-card" data-set="${c.id.startsWith("auto")?"automatic":"manual"}"><div class="car-card-top"><span class="pill">${c.id.startsWith("auto")?"AUTOMATIC":"TRG PICK"}</span><span class="safety-mini">${esc(c.safety)}</span></div><h3>${esc(c.name)}</h3><div class="car-price">${fmt(c.price)}</div><p class="muted">${esc(c.deal)}</p><div class="mini-stats"><div><b>${c.power}</b><span>PS/bhp</span></div><div><b>${c.torque}</b><span>Nm</span></div><div><b>${c.mileage}</b><span>ARAI</span></div></div><p class="card-best"><b>Best for:</b> ${esc(c.best)}</p><div class="card-links"><a class="link" href="car.html?id=${encodeURIComponent(c.id)}">View profile →</a><a class="link" href="compare.html?car=${encodeURIComponent(c.id)}">Compare</a></div></article>`}
 const allCars=document.querySelector("#allCars");
