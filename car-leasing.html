@@ -37,6 +37,94 @@
 .calc-result{margin-top:14px;background:linear-gradient(135deg,#126fbd,#1688ef);color:#fff;border-radius:12px;padding:17px}.calc-result .amount{font-size:33px;font-weight:950;letter-spacing:-1px}.calc-result small{font-size:11px;opacity:.9}
 @media(max-width:900px){.lease-layout{grid-template-columns:1fr}.consult-box{position:static;margin-top:10px;order:-1}.calc-fields{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.lease-wrap{width:calc(100% - 24px)}.lease-hero img{aspect-ratio:4/3}.lease-main h1{font-size:43px;letter-spacing:-2.3px}.lease-dek{font-size:17px}.lease-grid2,.compare-cards,.result-grid,.calc-outs{grid-template-columns:1fr}.calc-fields{grid-template-columns:1fr}.lease-main h2{font-size:27px}}
+
+<style id="trg-leasing-page-final">
+.lease-article{padding:30px 0 80px}
+.lease-wrap{width:min(1240px,calc(100% - 40px));margin:auto}
+.lease-header{padding:8px 0 0}
+.lease-header .lease-kicker{margin-bottom:4px}
+.lease-header h1{max-width:1040px;margin:7px 0 16px;font-size:clamp(44px,5.2vw,72px);line-height:.98;letter-spacing:-3.2px}
+.lease-header .lease-dek{max-width:900px;margin-bottom:18px}
+.lease-header .lease-tags{margin-bottom:0}
+.lease-hero{margin-top:24px;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#07182a}
+.lease-hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center}
+.lease-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+.lease-main{padding-top:32px;max-width:850px}
+.lease-main h2{font-size:30px;letter-spacing:-1.2px;margin:40px 0 10px;line-height:1.05}
+.lease-main p{font-size:16px;color:#263b51;margin:0 0 16px}
+.lease-callout{padding:19px 21px;background:#eef6ff;border-left:4px solid var(--blue);border-radius:12px;margin:22px 0}
+.lease-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lease-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}
+.lease-card h3{font-size:19px;margin:0 0 8px}.lease-card p{font-size:13px;margin:0}
+.lease-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 22px rgba(7,24,42,.04)}
+.lease-table{width:100%;border-collapse:collapse;min-width:650px;background:#fff}
+.lease-table th,.lease-table td{padding:12px 13px;border-bottom:1px solid #e5ebf1;font-size:13px;text-align:left}
+.lease-table th{background:#f2f6fa;font-weight:950}.lease-table tr:last-child td{border-bottom:0}
+.compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:17px}
+.compare-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}
+.compare-card.primary{border:2px solid var(--blue)}
+.compare-card .label{font-size:10px;color:var(--blue);letter-spacing:1.8px;font-weight:950;text-transform:uppercase}
+.compare-card .big{font-size:28px;font-weight:950;letter-spacing:-1px;margin:7px 0 13px}
+.compare-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #edf1f5;padding:7px 0;font-size:13px}
+.compare-row:last-child{border-bottom:0}
+.result-box{background:#07182a;color:#fff;border-radius:17px;padding:22px;margin-top:18px}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}
+.result-metric{background:#102a45;border-radius:10px;padding:12px}
+.result-metric small{display:block;color:#9db2c8;text-transform:uppercase;font-size:9px;letter-spacing:1px;font-weight:900}
+.result-metric b{display:block;font-size:20px;margin-top:4px}
+.consult-box{position:sticky;top:82px;margin-top:36px;background:linear-gradient(155deg,#07182a,#123b63);color:#fff;border-radius:19px;padding:22px;box-shadow:var(--shadow)}
+.consult-head{display:flex;gap:11px;align-items:center}
+.consult-head img{width:45px;height:45px;border-radius:50%;object-fit:cover;border:2px solid var(--blue2)}
+.consult-mini{color:#55b0ff;text-transform:uppercase;letter-spacing:1.5px;font-size:9px;font-weight:900}
+.consult-box h3{font-size:22px;line-height:1.08;margin:9px 0}
+.consult-box p{font-size:13px;color:#d8e8f6;margin:0 0 17px}
+.consult-cta{display:block;text-align:center;background:var(--blue);padding:12px;border-radius:10px;font-weight:900;font-size:13px}
+.calc-box{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow)}
+.calc-title{display:flex;align-items:start;justify-content:space-between;gap:18px}
+.calc-title h2{margin:0;font-size:28px}
+.live{background:#eaf4ff;color:#1680da;font-size:10px;font-weight:950;letter-spacing:1px;padding:7px 9px;border-radius:999px}
+.calc-fields{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:18px}
+.calc-field label{display:block;color:#71869d;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:900;margin-bottom:6px}
+.calc-field input,.calc-field select{width:100%;padding:10px 11px;border:1px solid #cfdbe7;border-radius:9px;font:inherit;outline:0}
+.calc-field input:focus,.calc-field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e8f4ff}
+.calc-outs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:17px}
+.calc-out{background:#f3f7fb;border-radius:10px;padding:12px}
+.calc-out small{display:block;color:#71869d;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:900}
+.calc-out b{display:block;font-size:20px;margin-top:3px}
+.calc-result{margin-top:14px;background:linear-gradient(135deg,#126fbd,#1688ef);color:#fff;border-radius:12px;padding:17px}
+.calc-result .amount{font-size:33px;font-weight:950;letter-spacing:-1px}
+.calc-result small{font-size:11px;opacity:.9}
+.lease-note{font-size:12px!important;color:#7890aa!important}
+
+/* Mobile is a single, intentional reading flow:
+   headline -> image -> article content -> consultation card. */
+@media(max-width:900px){
+  .lease-article{padding:22px 0 55px}
+  .lease-layout{display:block}
+  .lease-main{max-width:none;padding-top:28px}
+  .consult-box{position:static;margin:34px 0 0}
+  .calc-fields{grid-template-columns:repeat(2,1fr)}
+  .lease-grid2,.compare-cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .lease-wrap{width:calc(100% - 24px)}
+  .lease-header h1{font-size:40px;line-height:1;letter-spacing:-2.1px}
+  .lease-dek{font-size:17px}
+  .lease-tags{gap:6px}
+  .lease-tag{font-size:10px;padding:6px 9px}
+  .lease-hero{margin-top:19px;border-radius:15px}
+  .lease-hero img{aspect-ratio:16/9;object-fit:contain;background:#07182a}
+  .lease-main h2{font-size:26px;margin-top:34px}
+  .lease-grid2,.compare-cards,.result-grid,.calc-fields,.calc-outs{grid-template-columns:1fr}
+  .lease-table{min-width:620px}
+  .calc-box{padding:16px;border-radius:15px}
+  .calc-title{display:block}
+  .live{display:inline-block;margin-top:9px}
+  .consult-box{border-radius:15px;padding:18px}
+  .consult-box h3{font-size:20px}
+}
+</style>
+
 </style>
 </head>
 <body>
@@ -50,15 +138,19 @@
 </div></header>
 
 <main class="lease-article"><div class="lease-wrap">
-<div class="lease-hero"><img src="assets/leasing-hero.jpg" alt="Four cars illustrating cash, finance and company lease choices"></div>
-<div class="lease-layout">
-<article class="lease-main">
+
+<header class="lease-header">
 <div class="lease-kicker">TRG AUTO EXPLAINER</div>
 <h1>Car Leasing Can Save You 25–30% of Your Car's Cost — And In Some Cases, Even More</h1>
 <p class="lease-dek">Most people compare only the EMI. But the real calculation starts with how the car is paid for, how your salary is structured and which car expenses can be treated tax-efficiently.</p>
 <div class="lease-tags"><span class="lease-tag">Cash vs Finance vs Lease</span><span class="lease-tag">4-year example</span><span class="lease-tag">Company car lease</span><span class="lease-tag">Interactive calculator</span></div>
+</header>
 
-<div class="lease-callout"><b>The idea in one line:</b> A company lease can change the effective economics of a car because some costs may be handled through salary restructuring and eligible car expenses may receive favourable tax treatment. The exact result depends on your employer, lease provider and tax circumstances.</div>
+<div class="lease-hero"><img src="assets/leasing-hero.jpg" alt="Four cars illustrating cash, finance and company lease choices"></div>
+
+<div class="lease-layout">
+<article class="lease-main">
+
 
 <h2>First: What is car leasing?</h2>
 <p>In a company-car lease, a leasing company typically leases the vehicle and the employer provides the employee access to it as part of the compensation structure. Instead of funding the entire car from post-tax salary, the lease rental can be incorporated into salary restructuring.</p>
