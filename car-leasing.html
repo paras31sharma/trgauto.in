@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Car Leasing Can Save You 25–30% of Your Car's Cost — TRG Auto</title>
+<meta name="description" content="Car leasing can reduce the effective cost of a car through salary restructuring and eligible expense treatment. See a worked ₹20 lakh example and use the TRG Auto car lease calculator.">
+<link rel="stylesheet" href="assets/styles.css?v=6.2">
+<style>
+.lease-article{padding:36px 0 80px}.lease-wrap{width:min(1240px,calc(100% - 40px));margin:auto}
+.lease-hero{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#07182a}
+.lease-hero img{width:100%;display:block;aspect-ratio:16/7;object-fit:cover;object-position:center}
+.lease-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:32px;align-items:start}
+.lease-main{padding-top:34px;max-width:850px}
+.lease-kicker{color:var(--blue);font-size:11px;letter-spacing:2.5px;font-weight:950;text-transform:uppercase}
+.lease-main h1{font-size:clamp(44px,5.3vw,72px);line-height:.98;letter-spacing:-3.2px;margin:10px 0 16px}
+.lease-dek{font-size:19px;color:var(--muted);line-height:1.55;margin:0 0 20px}
+.lease-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}.lease-tag{background:#eaf4ff;color:#1680da;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:850}
+.lease-main h2{font-size:30px;letter-spacing:-1.2px;margin:40px 0 10px;line-height:1.05}
+.lease-main p{font-size:16px;color:#263b51;margin:0 0 16px}
+.lease-callout{padding:19px 21px;background:#eef6ff;border-left:4px solid var(--blue);border-radius:12px;margin:22px 0}
+.lease-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.lease-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}
+.lease-card h3{font-size:19px;margin:0 0 8px}.lease-card p{font-size:13px;margin:0}
+.lease-table{width:100%;border-collapse:collapse;min-width:650px;background:#fff}.lease-table th,.lease-table td{padding:12px 13px;border-bottom:1px solid #e5ebf1;font-size:13px;text-align:left}.lease-table th{background:#f2f6fa;font-weight:950}.lease-table tr:last-child td{border-bottom:0}
+.lease-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 22px rgba(7,24,42,.04)}
+.compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:17px}.compare-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}.compare-card.primary{border:2px solid var(--blue)}
+.compare-card .label{font-size:10px;color:var(--blue);letter-spacing:1.8px;font-weight:950;text-transform:uppercase}.compare-card .big{font-size:28px;font-weight:950;letter-spacing:-1px;margin:7px 0 13px}.compare-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #edf1f5;padding:7px 0;font-size:13px}.compare-row:last-child{border-bottom:0}
+.result-box{background:#07182a;color:#fff;border-radius:17px;padding:22px;margin-top:18px}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}.result-metric{background:#102a45;border-radius:10px;padding:12px}.result-metric small{display:block;color:#9db2c8;text-transform:uppercase;font-size:9px;letter-spacing:1px;font-weight:900}.result-metric b{display:block;font-size:20px;margin-top:4px}
+.consult-box{position:sticky;top:90px;margin-top:70px;background:linear-gradient(155deg,#07182a,#123b63);color:#fff;border-radius:19px;padding:22px;box-shadow:var(--shadow)}
+.consult-head{display:flex;gap:11px;align-items:center}.consult-head img{width:45px;height:45px;border-radius:50%;object-fit:cover;border:2px solid var(--blue2)}.consult-mini{color:#55b0ff;text-transform:uppercase;letter-spacing:1.5px;font-size:9px;font-weight:900}.consult-box h3{font-size:22px;line-height:1.08;margin:9px 0}.consult-box p{font-size:13px;color:#d8e8f6;margin:0 0 17px}.consult-cta{display:block;text-align:center;background:var(--blue);padding:12px;border-radius:10px;font-weight:900;font-size:13px}
+.lease-note{font-size:12px!important;color:#7890aa!important}
+.calc-box{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow)}
+.calc-title{display:flex;align-items:start;justify-content:space-between;gap:18px}.calc-title h2{margin:0;font-size:28px}.live{background:#eaf4ff;color:#1680da;font-size:10px;font-weight:950;letter-spacing:1px;padding:7px 9px;border-radius:999px}
+.calc-fields{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:18px}.calc-field label{display:block;color:#71869d;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:900;margin-bottom:6px}.calc-field input,.calc-field select{width:100%;padding:10px 11px;border:1px solid #cfdbe7;border-radius:9px;font:inherit;outline:0}.calc-field input:focus,.calc-field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e8f4ff}
+.calc-outs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:17px}.calc-out{background:#f3f7fb;border-radius:10px;padding:12px}.calc-out small{display:block;color:#71869d;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:900}.calc-out b{display:block;font-size:20px;margin-top:3px}
+.calc-result{margin-top:14px;background:linear-gradient(135deg,#126fbd,#1688ef);color:#fff;border-radius:12px;padding:17px}.calc-result .amount{font-size:33px;font-weight:950;letter-spacing:-1px}.calc-result small{font-size:11px;opacity:.9}
+@media(max-width:900px){.lease-layout{grid-template-columns:1fr}.consult-box{position:static;margin-top:10px;order:-1}.calc-fields{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.lease-wrap{width:calc(100% - 24px)}.lease-hero img{aspect-ratio:4/3}.lease-main h1{font-size:43px;letter-spacing:-2.3px}.lease-dek{font-size:17px}.lease-grid2,.compare-cards,.result-grid,.calc-outs{grid-template-columns:1fr}.calc-fields{grid-template-columns:1fr}.lease-main h2{font-size:27px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="container navin">
+<a class="logo" href="index.html" aria-label="TRG Auto home"><span>TRG</span> AUTO</a>
+<button class="menu-toggle" aria-label="Open navigation">☰</button>
+<nav class="links" id="siteNav"><a href="index.html">Home</a><a href="cars.html">Cars</a><a href="compare.html">Compare</a><a href="guides.html">Guides</a><a href="videos.html">Videos</a></nav>
+<a class="social" href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener" aria-label="Open @theregularguy.in on Instagram">
+<svg class="igicon" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffb300"/><stop offset=".45" stop-color="#ff2d55"/><stop offset="1" stop-color="#833ab4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="url(#ig)" stroke-width="2.3"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="url(#ig)" stroke-width="2.1"/><circle cx="17.5" cy="6.7" r="1.2" fill="#ff2d55"/></svg>
+<img class="igdp" src="assets/insta-dp.jpg" alt="The Regular Guy"><span class="ighandle">@theregularguy.in</span></a>
+</div></header>
+
+<main class="lease-article"><div class="lease-wrap">
+<div class="lease-hero"><img src="assets/leasing-hero.jpg" alt="Four cars illustrating cash, finance and company lease choices"></div>
+<div class="lease-layout">
+<article class="lease-main">
+<div class="lease-kicker">TRG AUTO EXPLAINER</div>
+<h1>Car Leasing Can Save You 25–30% of Your Car's Cost — And In Some Cases, Even More</h1>
+<p class="lease-dek">Most people compare only the EMI. But the real calculation starts with how the car is paid for, how your salary is structured and which car expenses can be treated tax-efficiently.</p>
+<div class="lease-tags"><span class="lease-tag">Cash vs Finance vs Lease</span><span class="lease-tag">4-year example</span><span class="lease-tag">Company car lease</span><span class="lease-tag">Interactive calculator</span></div>
+
+<div class="lease-callout"><b>The idea in one line:</b> A company lease can change the effective economics of a car because some costs may be handled through salary restructuring and eligible car expenses may receive favourable tax treatment. The exact result depends on your employer, lease provider and tax circumstances.</div>
+
+<h2>First: What is car leasing?</h2>
+<p>In a company-car lease, a leasing company typically leases the vehicle and the employer provides the employee access to it as part of the compensation structure. Instead of funding the entire car from post-tax salary, the lease rental can be incorporated into salary restructuring.</p>
+<p>So don't ask only <b>“What's my EMI?”</b> Ask <b>“What is the total impact on my salary and effective cost?”</b></p>
+
+<h2>Why can leasing be attractive for employees?</h2>
+<div class="lease-grid2">
+<div class="lease-card"><h3>Salary restructuring</h3><p>Part of compensation may be structured towards the car lease, depending on the employer's scheme.</p></div>
+<div class="lease-card"><h3>Potential tax efficiency</h3><p>Eligible lease and car-expense components may receive tax-favourable treatment under the scheme.</p></div>
+<div class="lease-card"><h3>Lower upfront cash</h3><p>You may not need to put the entire purchase price into the car on day one.</p></div>
+<div class="lease-card"><h3>Convenience</h3><p>Some employer programmes can administer insurance, maintenance and other vehicle-related services through a lease partner.</p></div>
+</div>
+
+<h2>Why would an employer offer it?</h2>
+<p>A company-car lease can be part of an employee benefits and compensation programme. It can give an employer a structured way to offer a vehicle benefit while a leasing partner handles much of the administration.</p>
+
+<h2>Cash vs Finance vs Company Lease</h2>
+<div class="lease-table-wrap"><table class="lease-table">
+<thead><tr><th></th><th>Cash</th><th>Bank Finance</th><th>Company Lease</th></tr></thead>
+<tbody>
+<tr><td><b>Upfront cash</b></td><td>Highest</td><td>Lower</td><td>Usually lower</td></tr>
+<tr><td><b>Monthly payment</b></td><td>None</td><td>EMI</td><td>Lease rental</td></tr>
+<tr><td><b>Paid from</b></td><td>Post-tax income</td><td>Post-tax income</td><td>Potentially salary-structured</td></tr>
+<tr><td><b>Finance cost</b></td><td>None</td><td>Interest</td><td>Built into lease economics</td></tr>
+<tr><td><b>Residual / buyback</b></td><td>None</td><td>Usually none</td><td>Often applies</td></tr>
+<tr><td><b>Tax treatment</b></td><td>Generally no personal car-purchase deduction</td><td>Generally no personal car-purchase deduction</td><td>Employer/scheme-specific</td></tr>
+<tr><td><b>Running expenses</b></td><td>Paid personally</td><td>Paid personally</td><td>May be structured/reimbursed</td></tr>
+</tbody></table></div>
+
+<h2>Let's put the maths to work</h2>
+<p>Take a car with an assumed <b>₹22 lakh Delhi on-road price</b> and a negotiated <b>₹2 lakh dealership discount</b>. That gives us a <b>₹20 lakh effective car price</b> for this illustration.</p>
+
+<div class="lease-table-wrap"><table class="lease-table">
+<thead><tr><th>Assumption</th><th>Illustrative value</th></tr></thead>
+<tbody>
+<tr><td>Car price used in comparison</td><td><b>₹20.00L</b></td></tr>
+<tr><td>Lease period</td><td>4 years / 48 months</td></tr>
+<tr><td>Assumed lease rate</td><td>9% p.a.</td></tr>
+<tr><td>Residual value</td><td>20% / ₹4.00L</td></tr>
+<tr><td>Annual eligible car expenses</td><td>₹3.00L</td></tr>
+<tr><td>Illustrative tax benefit</td><td>30%</td></tr>
+<tr><td>Insurance</td><td>Excluded</td></tr>
+</tbody></table></div>
+
+<div class="compare-cards">
+<div class="compare-card"><div class="label">BUY WITH CASH</div><div class="big">₹20.00L</div>
+<div class="compare-row"><span>Car price</span><span>₹20.00L</span></div>
+<div class="compare-row"><span>Acquisition tax benefit</span><span>₹0</span></div>
+<div class="compare-row"><span><b>Effective cost</b></span><span><b>₹20.00L</b></span></div></div>
+<div class="compare-card primary"><div class="label">COMPANY LEASE</div><div class="big">₹14.79L*</div>
+<div class="compare-row"><span>48 lease payments</span><span>₹20.55L</span></div>
+<div class="compare-row"><span>Residual / buyback</span><span>₹4.00L</span></div>
+<div class="compare-row"><span>Gross cost</span><span>₹24.55L</span></div>
+<div class="compare-row"><span>Lease tax benefit @ 30%</span><span>−₹6.17L</span></div>
+<div class="compare-row"><span>Maintenance tax benefit</span><span>−₹3.60L</span></div>
+<div class="compare-row"><span><b>Effective cost</b></span><span><b>₹14.79L</b></span></div></div>
+</div>
+
+<div class="result-box"><b>Under these assumptions:</b> the illustrative difference is approximately <b>₹5.21 lakh</b> versus buying the same ₹20L car with cash.<div class="result-grid">
+<div class="result-metric"><small>Cash</small><b>₹20.00L</b></div>
+<div class="result-metric"><small>Effective lease</small><b>₹14.79L</b></div>
+<div class="result-metric"><small>Difference</small><b>₹5.21L</b></div>
+</div></div>
+
+<h2>But don't confuse “effective cost” with the car's invoice price</h2>
+<p>The ₹14.79L figure is <b>not</b> the price at which the car is sold. It is the illustrative four-year effective cost after applying the assumed lease structure and tax benefits in this example.</p>
+<p>Your actual result depends on your salary, employer policy, lease quote, residual value, eligible expenses, motor-car perquisite treatment and exit conditions.</p>
+
+<h2>Build your own scenario</h2>
+<section class="calc-box" aria-label="TRG Auto car lease calculator">
+<div class="calc-title"><div><h2>TRG Auto Car Lease Calculator</h2><p style="margin:5px 0 0;color:#71869d;font-size:13px">Change the assumptions and see the illustrative economics instantly.</p></div><span class="live">LIVE</span></div>
+<div class="calc-fields">
+<div class="calc-field"><label>Annual salary</label><input id="salary" type="number" value="5000000" min="0" step="50000"></div>
+<div class="calc-field"><label>Car price</label><input id="carPrice" type="number" value="2000000" min="0" step="10000"></div>
+<div class="calc-field"><label>Lease period (years)</label><input id="years" type="number" value="4" min="1" max="8" step="1"></div>
+<div class="calc-field"><label>Lease rate %</label><input id="rate" type="number" value="9" min="0" max="30" step=".1"></div>
+<div class="calc-field"><label>Residual %</label><input id="residual" type="number" value="20" min="0" max="50" step="1"></div>
+<div class="calc-field"><label>Annual eligible expenses</label><input id="expenses" type="number" value="300000" min="0" step="10000"></div>
+<div class="calc-field"><label>Tax benefit %</label><input id="tax" type="number" value="30" min="0" max="50" step=".1"></div>
+<div class="calc-field"><label>Tax mode</label><select id="taxMode"><option value="custom">Use entered tax benefit</option><option value="slab">Use new-regime marginal slab</option></select></div>
+</div>
+<div class="calc-outs">
+<div class="calc-out"><small>Monthly lease</small><b id="outMonthly">₹42,816</b></div>
+<div class="calc-out"><small>Gross lease + residual</small><b id="outGross">₹24.55L</b></div>
+<div class="calc-out"><small>Lease tax benefit</small><b id="outLeaseTax">₹6.17L</b></div>
+<div class="calc-out"><small>Expense tax benefit</small><b id="outExpenseTax">₹3.60L</b></div>
+<div class="calc-out"><small>Effective lease cost</small><b id="outEffective">₹14.79L</b></div>
+<div class="calc-out"><small>Difference vs cash</small><b id="outDiff">₹5.21L</b></div>
+</div>
+<div class="calc-result"><div style="font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:900">Illustrative effective lease cost</div><div class="amount" id="outBig">₹14.79L</div><small>Cash purchase comparison: <span id="outCash">₹20.00L</span></small></div>
+<p class="lease-note"><b>Important:</b> This tool is an educational illustration, not tax or payroll advice. New-regime marginal-rate mode uses current slab thresholds and does not model employer-specific motor-car perquisites, surcharge, rebate interactions, special-rate income or payroll implementation.</p>
+</section>
+
+<h2>When does leasing make sense?</h2>
+<p>Look closely at the employer's actual scheme, the lease rate, residual value, tax treatment, eligible expense limits and what happens if you leave the company before the lease ends. A low monthly rental does not automatically mean a low total cost.</p>
+
+<div class="lease-callout"><b>TRG Auto rule:</b> Don't compare only the EMI. Compare <b>purchase price + lease cost + residual + salary impact + eligible expenses + tax treatment</b>.</div>
+
+<p class="lease-note"><b>Tax reference:</b> For AY 2026–27, the Income Tax Department lists new-regime slabs of 0% up to ₹4L, then 5%, 10%, 15%, 20%, 25% and 30% above ₹24L. The 87A rebate is also expanded for eligible resident individuals with total income up to ₹12L. <a href="https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/file-itr-2-online" target="_blank" rel="noopener">Official Income Tax Department reference →</a></p>
+</article>
+
+<aside class="consult-box">
+<div class="consult-head"><img src="assets/insta-dp.jpg" alt="The Regular Guy"><div><div class="consult-mini">Need personalised help?</div><b>@theregularguy.in</b></div></div>
+<h3>Want a paid consultation on car leasing?</h3>
+<p>Send me your salary structure, lease quote and car details. I can help you understand the numbers and what to check before signing.</p>
+<a class="consult-cta" href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener">DM me on Instagram →</a>
+</aside>
+</div>
+</div></main>
+
+<footer class="footer"><div class="container"><div class="footer-brand">TRG <span>AUTO</span></div><div class="notice">Cars. Explained. — Independent automotive information, comparisons and buying context by The Regular Guy.</div><a href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener" class="footer-insta">Follow @theregularguy.in on Instagram →</a></div></footer>
+
+<script>
+function money(n){return "₹"+Math.round(n).toLocaleString("en-IN")}
+function shortL(n){return "₹"+(n/100000).toFixed(2)+"L"}
+function marginalRate(salary){
+  // Indicative current new-regime marginal rate only.
+  // This does not attempt to model rebate/surcharge/perquisite rules.
+  const taxable=Math.max(0,salary-75000);
+  if(taxable>2400000)return 30;
+  if(taxable>2000000)return 25;
+  if(taxable>1600000)return 20;
+  if(taxable>1200000)return 15;
+  if(taxable>800000)return 10;
+  if(taxable>400000)return 5;
+  return 0;
+}
+function recalc(){
+  const salary=+document.getElementById("salary").value||0;
+  const price=+document.getElementById("carPrice").value||0;
+  const years=Math.max(1,+document.getElementById("years").value||1);
+  const annualRate=(+document.getElementById("rate").value||0)/100/12;
+  const residualPct=Math.max(0,+document.getElementById("residual").value||0)/100;
+  const expenses=+document.getElementById("expenses").value||0;
+  const mode=document.getElementById("taxMode").value;
+  let tax=+document.getElementById("tax").value||0;
+  if(mode==="slab"){tax=marginalRate(salary);document.getElementById("tax").value=tax}
+  const months=years*12;
+  const residual=price*residualPct;
+  let pmt=0;
+  if(price>0){
+    if(annualRate===0)pmt=(price-residual)/months;
+    else pmt=(price-residual/Math.pow(1+annualRate,months))*annualRate/(1-Math.pow(1+annualRate,-months));
+  }
+  const payments=pmt*months, gross=payments+residual;
+  const leaseTax=payments*tax/100;
+  const expenseTax=expenses*years*tax/100;
+  const effective=Math.max(0,gross-leaseTax-expenseTax);
+  const diff=price-effective;
+  document.getElementById("outMonthly").textContent=money(pmt);
+  document.getElementById("outGross").textContent=shortL(gross);
+  document.getElementById("outLeaseTax").textContent=shortL(leaseTax);
+  document.getElementById("outExpenseTax").textContent=shortL(expenseTax);
+  document.getElementById("outEffective").textContent=shortL(effective);
+  document.getElementById("outDiff").textContent=(diff>=0?"+":"−")+shortL(Math.abs(diff));
+  document.getElementById("outBig").textContent=shortL(effective);
+  document.getElementById("outCash").textContent=shortL(price);
+}
+["salary","carPrice","years","rate","residual","expenses","tax","taxMode"].forEach(id=>{
+  const el=document.getElementById(id);
+  el.addEventListener("input",recalc);el.addEventListener("change",recalc);
+});
+recalc();
+</script>
+<script src="assets/menu-v6.js?v=6.2"></script>
+</body>
+</html>
