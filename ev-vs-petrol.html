@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EV vs Petrol: The Real Breakeven — TRG Auto</title>
+<meta name="description" content="Fuel savings alone do not tell the full EV-versus-petrol story. Explore the purchase premium, opportunity cost, resale value and charging mix with a worked Nexon example.">
+<meta name="theme-color" content="#07182a">
+<link rel="stylesheet" href="assets/styles.css?v=6.2">
+<style>
+.ev-article{padding:34px 0 76px}
+.ev-wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.ev-head{max-width:1000px;margin-bottom:24px}
+.ev-kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:950;color:var(--blue)}
+.ev-title{font-size:clamp(42px,5.4vw,70px);line-height:.98;letter-spacing:-3px;margin:10px 0 15px;color:var(--ink)}
+.ev-dek{font-size:19px;color:var(--muted);max-width:850px;line-height:1.55;margin:0}
+.ev-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.ev-tag{background:#eaf4ff;color:#157fd8;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:850}
+.ev-hero{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--navy);margin:26px 0 34px}
+.ev-hero img{display:block;width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;object-position:center}
+.ev-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:28px;align-items:start}
+.ev-body{min-width:0;max-width:800px;font-size:16px;line-height:1.78;color:#25394d}
+.ev-body h2{font-size:29px;line-height:1.08;letter-spacing:-1.15px;color:var(--ink);margin:38px 0 10px}
+.ev-body p{margin:0 0 17px}
+.ev-body a{color:#137fda;text-decoration:underline;text-underline-offset:3px}
+.ev-takeaway{padding:19px 21px;background:#edf6ff;border-left:4px solid var(--blue);border-radius:12px;margin:20px 0 25px}
+.ev-takeaway strong{display:block;margin-bottom:4px;color:var(--ink)}
+.ev-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}
+.ev-metric{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px}
+.ev-metric small{display:block;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;font-weight:950;color:#7890a7}
+.ev-metric b{display:block;font-size:21px;letter-spacing:-.5px;margin-top:4px;color:var(--ink)}
+.ev-table-scroll{overflow:auto;border:1px solid var(--line);border-radius:13px;background:#fff;margin:18px 0 24px}
+.ev-table{border-collapse:collapse;width:100%;min-width:540px}
+.ev-table th,.ev-table td{padding:12px 13px;border-bottom:1px solid #e4ebf2;text-align:left;font-size:13px}
+.ev-table th{background:#f1f6fb;font-weight:900}
+.ev-table tr:last-child td{border-bottom:0}
+.ev-formula{background:#07182a;color:#f5f9ff;border-radius:12px;padding:16px 18px;margin:18px 0;font:14px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-x:auto}
+.ev-formula strong{color:#69b8ff}
+.ev-note{font-size:12px!important;line-height:1.65!important;color:#7a8fa4!important}
+.ev-checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 24px}
+.ev-check{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;line-height:1.6}
+.ev-check b{display:block;color:var(--ink);margin-bottom:3px}
+.ev-sidebar{position:sticky;top:88px}
+.ev-cta{background:linear-gradient(150deg,#07182a,#123b63);border-radius:18px;padding:21px;color:#fff;box-shadow:var(--shadow)}
+.ev-cta .tiny{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#62b5ff;font-weight:950}
+.ev-cta h3{font-size:22px;line-height:1.12;margin:9px 0}
+.ev-cta p{font-size:13px;color:#d8e8f6;line-height:1.6;margin:0 0 16px}
+.ev-cta a{display:block;background:var(--blue);color:#fff;text-align:center;border-radius:10px;padding:12px;font-weight:900;font-size:13px;text-decoration:none}
+.ev-cta a:hover{background:#0876d8}
+.ev-footer-cta{margin-top:34px;border-radius:16px;background:#07182a;padding:22px;color:#fff}
+.ev-footer-cta p{color:#d8e8f6;margin-bottom:0}
+.ev-footer-cta a{color:#63b8ff;font-weight:900}
+@media(max-width:900px){
+ .ev-grid{grid-template-columns:1fr}
+ .ev-sidebar{position:static;grid-row:2}
+ .ev-body{max-width:none}
+}
+@media(max-width:640px){
+ .ev-article{padding:22px 0 50px}
+ .ev-wrap{width:calc(100% - 24px)}
+ .ev-title{font-size:40px;letter-spacing:-2px;line-height:1}
+ .ev-dek{font-size:17px;line-height:1.5}
+ .ev-hero{border-radius:14px;margin:20px 0 25px}
+ .ev-hero img{aspect-ratio:4/3;object-fit:cover}
+ .ev-body{font-size:15.5px;line-height:1.75}
+ .ev-body h2{font-size:26px;margin-top:32px}
+ .ev-metrics{grid-template-columns:1fr 1fr}
+ .ev-checks{grid-template-columns:1fr}
+ .ev-cta{padding:18px}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="container navin">
+<a class="logo" href="index.html" aria-label="TRG Auto home"><span>TRG</span> AUTO</a>
+<button class="menu-toggle" aria-label="Open navigation">☰</button>
+<nav class="links" id="siteNav"><a href="index.html">Home</a><a href="cars.html">Cars</a><a href="compare.html">Compare</a><a href="guides.html">Guides</a><a href="videos.html">Videos</a></nav>
+<a class="social" href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener" aria-label="Open @theregularguy.in on Instagram"><svg class="igicon" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffb300"/><stop offset=".45" stop-color="#ff2d55"/><stop offset="1" stop-color="#833ab4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="url(#ig)" stroke-width="2.3"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="url(#ig)" stroke-width="2.1"/><circle cx="17.5" cy="6.7" r="1.2" fill="#ff2d55"/></svg><img class="igdp" src="assets/insta-dp.jpg" alt="The Regular Guy"><span class="ighandle">@theregularguy.in</span></a>
+</div></header>
+
+<main class="ev-article"><div class="ev-wrap">
+<header class="ev-head">
+<div class="ev-kicker">TRG AUTO EXPLAINER</div>
+<h1 class="ev-title">EV vs Petrol: The Real Breakeven</h1>
+<p class="ev-dek">Most comparisons stop at fuel savings. But the upfront premium, opportunity cost, resale value and where you charge can change the financial answer.</p>
+<div class="ev-tags"><span class="ev-tag">Nexon example</span><span class="ev-tag">10,000 km/year</span><span class="ev-tag">5-year view</span><span class="ev-tag">Ownership economics</span></div>
+</header>
+
+<div class="ev-hero"><img src="assets/ev-vs-petrol.jpg" alt="Electric and petrol SUVs shown at charging and fuel stations at dusk"></div>
+
+<div class="ev-grid">
+<article class="ev-body">
+<div class="ev-takeaway"><strong>The core idea</strong>An EV can cost less to run and still take years to recover its higher purchase price. The right comparison is total ownership economics—not just petrol versus electricity.</div>
+
+<h2>The Nexon example</h2>
+<p>Let's use the assumptions from the TRG reel: an EV costs <b>₹2.69 lakh more</b> than the comparable petrol car. The car is driven 10,000 km each year, petrol costs ₹102 per litre, public DC charging costs ₹22 per kWh, and the assumed efficiencies are 12 km/l for petrol and 6 km/kWh for the EV.</p>
+
+<div class="ev-metrics">
+<div class="ev-metric"><small>Extra upfront cost</small><b>₹2.69L</b></div>
+<div class="ev-metric"><small>Petrol / year</small><b>₹85,000</b></div>
+<div class="ev-metric"><small>EV energy / year</small><b>₹36,667</b></div>
+<div class="ev-metric"><small>Annual saving</small><b>₹48,333</b></div>
+</div>
+
+<div class="ev-table-scroll"><table class="ev-table">
+<thead><tr><th>Input / result</th><th>Petrol</th><th>EV</th></tr></thead>
+<tbody>
+<tr><td>Annual distance</td><td>10,000 km</td><td>10,000 km</td></tr>
+<tr><td>Efficiency assumption</td><td>12 km/l</td><td>6 km/kWh</td></tr>
+<tr><td>Energy price</td><td>₹102/litre</td><td>₹22/kWh</td></tr>
+<tr><td>Calculated annual energy cost</td><td>₹85,000</td><td>₹36,667</td></tr>
+<tr><td><b>Annual EV energy saving</b></td><td>—</td><td><b>₹48,333</b></td></tr>
+</tbody></table></div>
+
+<p>At that saving rate, five years of lower energy costs add up to about <b>₹2.42 lakh</b>. That's close to—but still below—the ₹2.69 lakh upfront premium. After five years, roughly ₹27,000 of the original premium remains unrecovered, before considering opportunity cost, resale value or other ownership costs.</p>
+<div class="ev-formula">5-year energy saving ≈ ₹48,333 × 5 = <strong>₹2.42 lakh</strong></div>
+
+<h2>The hidden cost: opportunity cost</h2>
+<p>What if the extra ₹2.69 lakh needed for the EV had instead been invested in a fixed deposit earning an assumed 7% annually? With annual compounding, it would grow to roughly <b>₹3.77 lakh after five years</b>—about ₹1.08 lakh in interest.</p>
+<div class="ev-formula">₹2.69L × (1.07)<sup>5</sup> ≈ <strong>₹3.77L</strong><br>Interest over five years ≈ <strong>₹1.08L</strong></div>
+<p>One rough way to visualise the hurdle is to divide that five-year future value by the current annual energy saving: ₹3.77 lakh ÷ ₹48,333 ≈ <b>7.8 years</b>, or around <b>78,000 km</b> at 10,000 km per year.</p>
+<p class="ev-note">This 7.8-year figure is a simplified communication shortcut—not a full discounted-cash-flow breakeven. A rigorous calculation would model the timing of yearly savings, changing energy prices, charging mix, finance cost, maintenance and resale value.</p>
+
+<h2>Resale value can change the answer</h2>
+<p>You don't just pay to use a car; you also own an asset that you'll eventually sell. EV resale values can be harder to estimate because battery health, technology changes, warranty coverage and buyer confidence all affect what a used EV is worth.</p>
+<p>The 2026 Autocar India–Spinny Mobility Intelligence Report highlights EV resale as an emerging challenge because predictable residual-value benchmarks are still developing. That is not proof that every EV resells worse than every petrol car—it means you should compare likely resale value model by model rather than assume the same depreciation rate for both. <a href="https://www.autocarindia.com/industry/autocar-india-and-spinny-reveal-used-car-study-2026" target="_blank" rel="noopener">Read the report →</a></p>
+
+<h2>Home charging vs public charging</h2>
+<p>The example uses ₹22/kWh public DC charging. Your actual savings may be very different if most charging happens at home, at work or on public fast chargers.</p>
+<div class="ev-checks">
+<div class="ev-check"><b>Mostly home charging</b>Lower charging rates can improve the EV's running-cost advantage.</div>
+<div class="ev-check"><b>Mostly public charging</b>Higher tariffs can reduce annual savings.</div>
+<div class="ev-check"><b>Mixed charging</b>Use a weighted average that reflects your real charging routine.</div>
+<div class="ev-check"><b>No home charger</b>Consider charging access, time and convenience—not just the rupee-per-kWh rate.</div>
+</div>
+
+<h2>What a proper EV-vs-petrol comparison should include</h2>
+<div class="ev-checks">
+<div class="ev-check"><b>01 · Purchase premium</b>Compare equivalent variants and like-for-like equipment.</div>
+<div class="ev-check"><b>02 · Energy savings</b>Use your actual annual kilometres and realistic fuel/charging rates.</div>
+<div class="ev-check"><b>03 · Opportunity cost</b>Account for what the extra upfront money could have earned elsewhere.</div>
+<div class="ev-check"><b>04 · Resale value</b>Estimate the likely value at your planned ownership horizon.</div>
+<div class="ev-check"><b>05 · Charging mix</b>Separate home, workplace and public charging.</div>
+<div class="ev-check"><b>06 · Other ownership costs</b>Include insurance, service, tyres, finance and any material tax or incentive differences.</div>
+</div>
+
+<h2>The takeaway</h2>
+<p>EVs can have a compelling running-cost advantage. But <b>lower running cost is not the same thing as financial breakeven</b>.</p>
+<p>For someone driving 10,000 km a year, the answer can depend on a handful of inputs: how much extra the EV costs up front, where it's charged, what that money could earn and what the vehicle will be worth at resale.</p>
+<div class="ev-takeaway"><strong>TRG framework</strong>Compare <b>purchase premium + energy savings + opportunity cost + resale value + charging mix</b> before deciding whether an EV works financially for your usage pattern.</div>
+
+<h2>Sources & assumptions</h2>
+<p class="ev-note">The ₹2.69 lakh purchase premium, 10,000 km/year, ₹102/litre petrol, ₹22/kWh public DC charging and stated efficiencies are the worked-example assumptions supplied with the TRG reel. The annual costs above are recalculated from those inputs and rounded to the nearest rupee; actual prices and efficiencies vary.</p>
+<p class="ev-note">Resale context: <a href="https://www.autocarindia.com/industry/autocar-india-and-spinny-reveal-used-car-study-2026" target="_blank" rel="noopener">Autocar India–Spinny Mobility Intelligence Report 2026</a>. Its broader used-car trends should not be treated as a guaranteed resale prediction for an individual EV model.</p>
+
+<div class="ev-footer-cta"><b>Want more real-world car-cost breakdowns?</b><p>Follow The Regular Guy for practical automotive explainers and ownership maths.</p><a href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener">@theregularguy.in on Instagram →</a></div>
+</article>
+
+<aside class="ev-sidebar">
+<div class="ev-cta"><div class="tiny">TRG Auto · Real-world car maths</div><h3>More than just the fuel bill.</h3><p>Use the complete ownership picture before you decide whether an EV makes financial sense for you.</p><a href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener">Follow @theregularguy.in →</a></div>
+</aside>
+</div>
+</div></main>
+
+<footer class="footer"><div class="container"><div class="footer-brand">TRG <span>AUTO</span></div><div class="notice">Cars. Explained. — Independent automotive information, comparisons and buying context by The Regular Guy.</div><a href="https://www.instagram.com/theregularguy.in/" target="_blank" rel="noopener" class="footer-insta">Follow @theregularguy.in on Instagram →</a></div></footer>
+<script src="assets/menu-v6.js?v=6.2"></script>
+</body>
+</html>
